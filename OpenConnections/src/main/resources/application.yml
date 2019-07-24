@@ -1,0 +1,24 @@
+
+management:
+  endpoint:
+    trace:
+      enabled: true
+  security:
+    enabled: false
+server:
+  port: 7001
+spring: 
+  profile: local
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: scott
+    password: tiger
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    hikari:
+      minimumIdle: 1
+      maximumPoolSize: 10
+      idleTimeout: 300000
+      poolName: HikariCP
+      connectionTimeout: 30000
+      connection-test-query: SELECT 1 FROM DUAL
+      test-on-borrow: true
